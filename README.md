@@ -41,3 +41,4 @@ conda activate thesis
 
 WANG TIANYU / オウ テンウ
 M2, 国士舘大学
+**GitHub**: [@outenu](https://github.com/outenu)
