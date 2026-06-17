@@ -3,7 +3,7 @@ from sklearn.metrics import (
     confusion_matrix, classification_report
 )
 
-def evaluate(y_true, y_pred, label_names=["positive", "negative"]):
+def evaluate(y_true, y_pred, label_names=["negative", "positive"]):
     acc = accuracy_score(y_true, y_pred)
     macro_f1 = f1_score(y_true, y_pred, average="macro")
     precision, recall, f1, support = precision_recall_fscore_support(

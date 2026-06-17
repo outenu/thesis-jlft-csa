@@ -10,26 +10,25 @@ def load_imdb(n_samples=None):
     return ds, test
 
 def load_marc_ja():
-    """MARC-ja validation を読み込む"""
     ds = load_dataset("shunk031/JGLUE", "MARC-ja", trust_remote_code=True)
-    return ds["validation"]
+    val = ds["validation"]
+    # MARC-ja(0=pos,1=neg) → 標準(0=neg,1=pos) に反転
+    def flip_label(example):
+        example["label"] = 1 - example["label"]
+        return example
+    return val.map(flip_label)
 
 def load_wrime_binary():
-    """WRIME test を reader 基準で2値化して読み込む（neutral 除外）"""
     ds = load_dataset("shunk031/wrime", "ver2", trust_remote_code=True)
     test = ds["test"]
-
-    sentences = []
-    labels = []
+    sentences, labels = [], []
     for sample in test:
         sentiment = sample["avg_readers"]["sentiment"]
         if sentiment >= 1:
             sentences.append(sample["sentence"])
-            labels.append(0)  # positive
+            labels.append(1)  # positive（標準に合わせる）
         elif sentiment <= -1:
             sentences.append(sample["sentence"])
-            labels.append(1)  # negative
-        # sentiment == 0 は除外
-
+            labels.append(0)  # negative
     from datasets import Dataset
     return Dataset.from_dict({"sentence": sentences, "label": labels})
