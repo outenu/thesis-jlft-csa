@@ -1,0 +1,37 @@
+{
+  "tag": "tohoku_marc_seed123",
+  "model": "tohoku-BERT",
+  "source": "marc-ja",
+  "seed": 123,
+  "train_loss": 0.16733328968870873,
+  "train_runtime": 108.3006,
+  "marc_ja": {
+    "accuracy": 0.9508312698974177,
+    "macro_f1": 0.9075746788306351,
+    "per_class": {
+      "negative": {
+        "precision": 0.7821576763485477,
+        "recall": 0.9172749391727494,
+        "f1": 0.8443449048152296,
+        "support": 822
+      },
+      "positive": {
+        "precision": 0.985501066098081,
+        "recall": 0.9565397350993378,
+        "f1": 0.9708044528460408,
+        "support": 4832
+      }
+    },
+    "confusion_matrix": [
+      [
+        754,
+        68
+      ],
+      [
+        210,
+        4622
+      ]
+    ]
+  },
+  "total_time": 127.35053324699402
+}

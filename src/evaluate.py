@@ -1,29 +1,35 @@
 from sklearn.metrics import (
-    accuracy_score, f1_score, precision_recall_fscore_support,
-    confusion_matrix, classification_report
+    accuracy_score, f1_score, precision_recall_fscore_support, confusion_matrix
 )
 
-def evaluate(y_true, y_pred, label_names=["negative", "positive"]):
+LABEL_NAMES = ["negative", "positive"]  # 0, 1
+
+
+def evaluate(y_true, y_pred, title=""):
     acc = accuracy_score(y_true, y_pred)
     macro_f1 = f1_score(y_true, y_pred, average="macro")
-    precision, recall, f1, support = precision_recall_fscore_support(
-        y_true, y_pred, average=None
+    p, r, f1, sup = precision_recall_fscore_support(
+        y_true, y_pred, average=None, labels=[0, 1], zero_division=0
     )
-    cm = confusion_matrix(y_true, y_pred)
+    cm = confusion_matrix(y_true, y_pred, labels=[0, 1])
 
+    print(f"\n--- {title} ---")
     print(f"  Accuracy:  {acc:.4f}")
     print(f"  Macro-F1:  {macro_f1:.4f}")
-    for i, name in enumerate(label_names):
-        print(f"  {name:>10s}  P={precision[i]:.4f}  R={recall[i]:.4f}  F1={f1[i]:.4f}  n={support[i]}")
-    print(f"\nConfusion Matrix:")
-    print(cm)
+    for i, name in enumerate(LABEL_NAMES):
+        print(f"  {name:>9s}  P={p[i]:.4f}  R={r[i]:.4f}  F1={f1[i]:.4f}  n={sup[i]}")
+    print("  Confusion Matrix (rows=true, cols=pred):")
+    print(f"    {cm.tolist()}")
 
     return {
-        "accuracy": acc,
-        "macro_f1": macro_f1,
+        "accuracy": float(acc),
+        "macro_f1": float(macro_f1),
         "per_class": {
-            name: {"precision": precision[i], "recall": recall[i], "f1": f1[i]}
-            for i, name in enumerate(label_names)
+            name: {
+                "precision": float(p[i]), "recall": float(r[i]),
+                "f1": float(f1[i]), "support": int(sup[i]),
+            }
+            for i, name in enumerate(LABEL_NAMES)
         },
-        "confusion_matrix": cm.tolist()
+        "confusion_matrix": cm.tolist(),
     }

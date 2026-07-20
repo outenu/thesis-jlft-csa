@@ -1,0 +1,38 @@
+{
+  "tag": "XLM-R_amazon_seed42",
+  "model": "XLM-R",
+  "source": "amazon",
+  "seed": 42,
+  "train_loss": 0.18521504146058845,
+  "train_runtime": 115.5984,
+  "marc_ja": {
+    "accuracy": 0.935620799434029,
+    "macro_f1": 0.8823786527064176,
+    "per_class": {
+      "negative": {
+        "precision": 0.7227626459143969,
+        "recall": 0.9038929440389294,
+        "f1": 0.8032432432432433,
+        "support": 822
+      },
+      "positive": {
+        "precision": 0.9829226113272805,
+        "recall": 0.9410182119205298,
+        "f1": 0.9615140621695919,
+        "support": 4832
+      }
+    },
+    "confusion_matrix": [
+      [
+        743,
+        79
+      ],
+      [
+        285,
+        4547
+      ]
+    ],
+    "n_misclassified": 364
+  },
+  "total_time": 127.13743352890015
+}

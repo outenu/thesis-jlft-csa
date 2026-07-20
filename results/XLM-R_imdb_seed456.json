@@ -1,0 +1,94 @@
+{
+  "tag": "XLM-R_imdb_seed456",
+  "model": "XLM-R",
+  "source": "imdb",
+  "seed": 456,
+  "train_loss": 0.22698833123294085,
+  "train_runtime": 114.6788,
+  "imdb_test": {
+    "accuracy": 0.917,
+    "macro_f1": 0.916976006065753,
+    "per_class": {
+      "negative": {
+        "precision": 0.9316770186335404,
+        "recall": 0.9,
+        "f1": 0.9155645981688708,
+        "support": 1000
+      },
+      "positive": {
+        "precision": 0.9032882011605415,
+        "recall": 0.934,
+        "f1": 0.9183874139626352,
+        "support": 1000
+      }
+    },
+    "confusion_matrix": [
+      [
+        900,
+        100
+      ],
+      [
+        66,
+        934
+      ]
+    ]
+  },
+  "marc_ja": {
+    "accuracy": 0.9349133356915458,
+    "macro_f1": 0.875489980180577,
+    "per_class": {
+      "negative": {
+        "precision": 0.7451403887688985,
+        "recall": 0.8394160583941606,
+        "f1": 0.7894736842105263,
+        "support": 822
+      },
+      "positive": {
+        "precision": 0.9720812182741116,
+        "recall": 0.9511589403973509,
+        "f1": 0.9615062761506277,
+        "support": 4832
+      }
+    },
+    "confusion_matrix": [
+      [
+        690,
+        132
+      ],
+      [
+        236,
+        4596
+      ]
+    ],
+    "n_misclassified": 368
+  },
+  "wrime": {
+    "accuracy": 0.7759685569904547,
+    "macro_f1": 0.7745352889161327,
+    "per_class": {
+      "negative": {
+        "precision": 0.6731813246471227,
+        "recall": 0.8635097493036211,
+        "f1": 0.7565588773642465,
+        "support": 718
+      },
+      "positive": {
+        "precision": 0.8860465116279069,
+        "recall": 0.7168391345249294,
+        "f1": 0.7925117004680188,
+        "support": 1063
+      }
+    },
+    "confusion_matrix": [
+      [
+        620,
+        98
+      ],
+      [
+        301,
+        762
+      ]
+    ]
+  },
+  "total_time": 123.7024438381195
+}

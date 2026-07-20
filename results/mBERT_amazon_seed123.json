@@ -1,0 +1,38 @@
+{
+  "tag": "mBERT_amazon_seed123",
+  "model": "mBERT",
+  "source": "amazon",
+  "seed": 123,
+  "train_loss": 0.21866080258914983,
+  "train_runtime": 112.533,
+  "marc_ja": {
+    "accuracy": 0.736292889989388,
+    "macro_f1": 0.6572635503169943,
+    "per_class": {
+      "negative": {
+        "precision": 0.34199338686820974,
+        "recall": 0.8807785888077859,
+        "f1": 0.4926845865940796,
+        "support": 822
+      },
+      "positive": {
+        "precision": 0.9722929035906135,
+        "recall": 0.7117135761589404,
+        "f1": 0.8218425140399092,
+        "support": 4832
+      }
+    },
+    "confusion_matrix": [
+      [
+        724,
+        98
+      ],
+      [
+        1393,
+        3439
+      ]
+    ],
+    "n_misclassified": 1491
+  },
+  "total_time": 117.16530156135559
+}

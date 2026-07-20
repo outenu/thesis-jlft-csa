@@ -1,0 +1,94 @@
+{
+  "tag": "mBERT_imdb_seed456",
+  "model": "mBERT",
+  "source": "imdb",
+  "seed": 456,
+  "train_loss": 0.25148587153695734,
+  "train_runtime": 113.1498,
+  "imdb_test": {
+    "accuracy": 0.903,
+    "macro_f1": 0.9029836042291147,
+    "per_class": {
+      "negative": {
+        "precision": 0.9137577002053389,
+        "recall": 0.89,
+        "f1": 0.9017223910840932,
+        "support": 1000
+      },
+      "positive": {
+        "precision": 0.8927875243664717,
+        "recall": 0.916,
+        "f1": 0.9042448173741362,
+        "support": 1000
+      }
+    },
+    "confusion_matrix": [
+      [
+        890,
+        110
+      ],
+      [
+        84,
+        916
+      ]
+    ]
+  },
+  "marc_ja": {
+    "accuracy": 0.7697205518217192,
+    "macro_f1": 0.6794845425640059,
+    "per_class": {
+      "negative": {
+        "precision": 0.36899563318777295,
+        "recall": 0.8223844282238443,
+        "f1": 0.5094197437829691,
+        "support": 822
+      },
+      "positive": {
+        "precision": 0.9618001046572475,
+        "recall": 0.7607615894039735,
+        "f1": 0.8495493413450428,
+        "support": 4832
+      }
+    },
+    "confusion_matrix": [
+      [
+        676,
+        146
+      ],
+      [
+        1156,
+        3676
+      ]
+    ],
+    "n_misclassified": 1302
+  },
+  "wrime": {
+    "accuracy": 0.6928691746209994,
+    "macro_f1": 0.6926982771102237,
+    "per_class": {
+      "negative": {
+        "precision": 0.5837414299706171,
+        "recall": 0.83008356545961,
+        "f1": 0.6854514088556641,
+        "support": 718
+      },
+      "positive": {
+        "precision": 0.8394736842105263,
+        "recall": 0.6001881467544685,
+        "f1": 0.6999451453647834,
+        "support": 1063
+      }
+    },
+    "confusion_matrix": [
+      [
+        596,
+        122
+      ],
+      [
+        425,
+        638
+      ]
+    ]
+  },
+  "total_time": 122.33227324485779
+}
